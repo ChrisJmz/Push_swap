@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:27:03 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/10 16:21:49 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/11 11:18:54 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ void    ft_push(t_stack **src, t_stack **dest);
 int ft_check(int ac, char **av, t_stack **stack);
 void	ft_add_last(t_stack **alst, t_stack *new);
 t_stack	*ft_stack_new(int content);
+int is_digit(char *str);
+void    ft_swap(t_stack **src);
+void    ft_rotate(t_stack **src);
 
 #endif
