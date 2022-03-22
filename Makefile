@@ -6,25 +6,29 @@
 #    By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 12:29:22 by cjimenez          #+#    #+#              #
-#    Updated: 2022/03/10 15:14:17 by cjimenez         ###   ########.fr        #
+#    Updated: 2022/03/22 14:54:22 by cjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC =	main.c		\
-		operators.c	\
-		parsing.c	\
-		utils.c		\
+SRC =	srcs/main.c					\
+		srcs/operators/operators.c	\
+		srcs/operators/op_push.c	\
+		srcs/operators/op_swap.c	\
+		srcs/operators/op_rotate.c	\
+		srcs/operators/op_rrotate.c	\
+		srcs/parsing.c				\
+		srcs/utils.c				\
 
 LIBFT = libft/libft.a
 OBJS = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INC = include
+INC = -I./include
 RM = rm -rf
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) $(INC) -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
 
