@@ -50,6 +50,10 @@ void    sort_3(t_stack **stack_a)
     }
 }
 
+void    sort_4(t_stack **stack_a)
+{
+        
+}
 void    sort(t_stack **stack_a)
 {
     int count;
@@ -59,4 +63,9 @@ void    sort(t_stack **stack_a)
         sort_2(stack_a);
     else if (count == 3)
         sort_3(stack_a);
+    else if (count >= 4)
+    {
+        ft_printf("eh vasy frr tabuse\n");
+        exit(0);
+    }
 }
