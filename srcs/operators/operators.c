@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:57:41 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/22 14:53:51 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:41:15 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,41 @@ void    sort_3(t_stack **stack_a)
     }
 }
 
-void    sort_4(t_stack **stack_a)
+void    sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-        
+    int smallest;
+
+    smallest = find_small(*stack_a);
+    while ((*stack_a)->content > smallest)
+    {
+        if ((*stack_a)->next->content == smallest)
+            ft_rotate_a(stack_a);
+        else
+            ft_rrotate_a(stack_a);
+    }
+    ft_push_b(stack_a, stack_b);
+    sort_3(stack_a);
+    ft_push_a(stack_a, stack_b);
 }
-void    sort(t_stack **stack_a)
+
+void sort_5(t_stack **stack_a, t_stack **stack_b)
+{
+    int smallest;
+
+    smallest = find_small(*stack_a);
+    while ((*stack_a)->content > smallest)
+    {
+        if ((*stack_a)->next->content == smallest)
+            ft_rotate_a(stack_a);
+        else
+            ft_rrotate_a(stack_a);
+    }
+    ft_push_b(stack_a, stack_b);
+    sort_4(stack_a, stack_b);
+    ft_push_a(stack_a, stack_b);
+}
+
+void    sort(t_stack **stack_a, t_stack **stack_b)
 {
     int count;
 
@@ -63,9 +93,8 @@ void    sort(t_stack **stack_a)
         sort_2(stack_a);
     else if (count == 3)
         sort_3(stack_a);
-    else if (count >= 4)
-    {
-        ft_printf("eh vasy frr tabuse\n");
-        exit(0);
-    }
+    else if (count == 4)
+        sort_4(stack_a, stack_b);
+    else if (count == 5)
+        sort_5(stack_a, stack_b);
 }
