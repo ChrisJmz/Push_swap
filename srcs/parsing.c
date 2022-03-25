@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:34:49 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/22 14:33:32 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/25 08:33:31 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,23 +81,26 @@ int ft_check(int ac, char **av, t_stack **stack)
     int content;
 
     i = 0;
-    while (++i < ac)
+    if (ac > 2)
     {
-        arg = av[i];
-        if (is_digit(arg) == 1)
+        while (++i < ac)
         {
-            ft_printf(RED "Argument must be an int!\n" RESET);
-            return(free_stack(stack));
+            arg = av[i];
+            if (is_digit(arg) == 1)
+            {
+                ft_printf(RED "Argument must be an int!\n" RESET);
+                return(free_stack(stack));
+            }
+            if (is_int(arg) == 1)
+            {
+                ft_printf(RED "Int max reached!\n" RESET);
+                return(free_stack(stack));
+            }
+            content = ft_atoi(arg);
+            if (is_double(content, *stack) == 1)
+                return(free_stack(stack));
+            ft_add_last(stack, ft_stack_new(content));
         }
-        if (is_int(arg) == 1)
-        {
-            ft_printf(RED "Int max reached!\n" RESET);
-            return(free_stack(stack));
-        }
-        content = ft_atoi(arg);
-        if (is_double(content, *stack) == 1)
-            return(free_stack(stack));
-        ft_add_last(stack, ft_stack_new(content));
     }
     return (0);
 }

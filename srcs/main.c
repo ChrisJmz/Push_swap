@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:36:44 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/24 17:10:52 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:30:32 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,8 @@ int main(int ac, char **av)
     }
     if (ft_check(ac, av, &stack_a) == 0)
     {
+        ft_fill_index(stack_a);
+        index_stack(&stack_a);
         sort(&stack_a, &stack_b);
-        while(stack_a != NULL)
-        {
-            while (stack_b != NULL)
-            {
-                ft_printf("%d\n", stack_b->content);
-                stack_b = stack_b->next;
-            }
-            ft_printf("   ");
-            ft_printf("%d\n", stack_a->content);
-            stack_a = stack_a->next;
-        }
-        ft_printf("_  _\n");
-        ft_printf("b  a\n");
     }
 }

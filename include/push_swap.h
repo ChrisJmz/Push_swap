@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:27:03 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/24 16:55:12 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:15:25 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ int     count_stack(t_stack *stack);
 void    sort(t_stack **stack_a, t_stack **stack_b);
 int     ft_sort_check(t_stack *stack);
 int     find_small(t_stack *stack);
+void    big_sort(t_stack **stack_a, t_stack **stack_b);
+int     find_big(t_stack *stack);
+int     ft_lstsize2(t_stack *stack);
+void	ft_fill_index(t_stack *stack_a);
+void	ft_fill_index_2(t_stack *stack_a, int i);
+void	index_stack(t_stack **stack_a);
 
 // OPERATION
 void    ft_push_a(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 #    By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 12:29:22 by cjimenez          #+#    #+#              #
-#    Updated: 2022/03/22 14:54:22 by cjimenez         ###   ########.fr        #
+#    Updated: 2022/03/25 09:58:46 by cjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC =	srcs/main.c					\
 		srcs/operators/op_rrotate.c	\
 		srcs/parsing.c				\
 		srcs/utils.c				\
+		srcs/algo/big_sort.c		\
 
 LIBFT = libft/libft.a
 OBJS = $(SRC:.c=.o)

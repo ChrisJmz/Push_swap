@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:57:41 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/24 16:41:15 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:17:04 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,6 @@ void    sort(t_stack **stack_a, t_stack **stack_b)
         sort_4(stack_a, stack_b);
     else if (count == 5)
         sort_5(stack_a, stack_b);
+    else if (count > 5)
+        big_sort(stack_a, stack_b);
 }
