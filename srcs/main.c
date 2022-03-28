@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	if (ac < 3)
 	{
-		printf(RED "Usage: ./push_swap <arg> ...\n" RESET);
+		ft_printf(RED "Usage: ./push_swap <arg> ...\n" RESET);
 		return (1);
 	}
 	if (ft_check(ac, av, &stack_a) == 0)
