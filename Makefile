@@ -20,6 +20,7 @@ SRC =	srcs/main.c					\
 		srcs/operators/op_rrotate.c	\
 		srcs/parsing.c				\
 		srcs/utils.c				\
+		srcs/utils2.c				\
 		srcs/algo/big_sort.c		\
 
 LIBFT = libft/libft.a

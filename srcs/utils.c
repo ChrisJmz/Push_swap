@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:11:30 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/25 11:15:05 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:18:36 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_add_last(t_stack **alst, t_stack *new)
 	else
 	{
 		ptr = *alst;
-        while (ptr->next != NULL)
-            ptr = ptr->next;
-        ptr->next = new;
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = new;
 	}
 }
 
@@ -39,19 +39,6 @@ t_stack	*ft_stack_new(int content)
 	return (p);
 }
 
-int	count_stack(t_stack *stack)
-{
-	int	count;
-
-	count = 0;
-	while (stack != NULL)
-	{
-		count++;
-		stack = stack->next;
-	}
-	return (count);
-}
-
 int	ft_sort_check(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -63,10 +50,10 @@ int	ft_sort_check(t_stack *stack)
 	return (0);
 }
 
-int find_big(t_stack *stack)
+int	find_big(t_stack *stack)
 {
-	int max;
-	
+	int	max;
+
 	max = stack->content;
 	while (stack != NULL)
 	{
@@ -79,7 +66,7 @@ int find_big(t_stack *stack)
 
 int	find_small(t_stack *stack)
 {
-	int min;
+	int	min;
 
 	min = stack->content;
 	while (stack != NULL)
@@ -89,60 +76,4 @@ int	find_small(t_stack *stack)
 		stack = stack->next;
 	}
 	return (min);
-}
-
-int	ft_lstsize2(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
-}
-
-void	ft_fill_index(t_stack *stack_a)
-{
-	int	i;
-
-	i = -1;
-	while (stack_a)
-	{
-		stack_a->index = i;
-		stack_a = stack_a->next;
-	}
-}
-
-void	ft_fill_index_2(t_stack *stack_a, int i)
-{
-	t_stack	*minimum;
-	t_stack	*tmp;
-
-	minimum = stack_a;
-	while (minimum->index != -1)
-		minimum = minimum->next;
-	tmp = stack_a;
-	while (tmp)
-	{
-		if (tmp->index == -1 && minimum->content > tmp->content)
-			minimum = tmp;
-		tmp = tmp->next;
-	}
-	minimum->index = i;
-}
-
-void	index_stack(t_stack **stack_a)
-{
-	t_stack	*temp;
-	int		i;
-	int		size;
-
-	i = 0;
-	temp = *stack_a;
-	size = ft_lstsize2(temp);
-	while (i < size)
-		ft_fill_index_2(temp, i++);
 }
