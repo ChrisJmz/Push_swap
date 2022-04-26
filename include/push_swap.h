@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:27:03 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/28 15:25:33 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:46:59 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_fill_index(t_stack *stack_a);
 void	ft_fill_index_2(t_stack *stack_a, int i);
 void	index_stack(t_stack **stack_a);
 int		free_stack(t_stack **stack);
+int		ft_sort_check(t_stack *stack);
 
 // OPERATION
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:34:49 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/28 15:13:05 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:47:33 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,16 @@ int	ft_check(int ac, char **av, t_stack **stack)
 		{
 			arg = av[i];
 			if (is_digit(arg) == 1)
-				return (free_stack(stack));
+				return (free_stack(stack), ft_printf("Error\n"));
 			if (is_int(arg) == 1)
-				return (free_stack(stack));
+				return (free_stack(stack), ft_printf("Error\n"));
 			content = ft_atoi(arg);
 			if (is_double(content, *stack) == 1)
-				return (free_stack(stack));
+				return (free_stack(stack), ft_printf("Error\n"));
 			ft_add_last(stack, ft_stack_new(content));
 		}
+		if (ft_sort_check(*stack) == 0)
+			return (free_stack(stack));
 	}
 	return (0);
 }

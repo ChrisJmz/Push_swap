@@ -6,7 +6,7 @@
 /*   By: cjimenez <cjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:36:44 by cjimenez          #+#    #+#             */
-/*   Updated: 2022/03/28 15:07:34 by cjimenez         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:48:13 by cjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 3)
-	{
-		ft_printf(RED "Usage: ./push_swap <arg> ...\n" RESET);
 		return (1);
-	}
 	if (ft_check(ac, av, &stack_a) == 0)
 	{
 		ft_fill_index(stack_a);
@@ -31,4 +28,7 @@ int	main(int ac, char **av)
 		sort(&stack_a, &stack_b);
 		free_stack(&stack_a);
 	}
+	else
+		return (0);
+	return (0);
 }
