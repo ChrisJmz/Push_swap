@@ -28,7 +28,5 @@ int	main(int ac, char **av)
 		sort(&stack_a, &stack_b);
 		free_stack(&stack_a);
 	}
-	else
-		return (0);
 	return (0);
 }
